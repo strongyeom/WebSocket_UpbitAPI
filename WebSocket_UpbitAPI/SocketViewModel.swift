@@ -29,10 +29,10 @@ class SocketViewModel: ObservableObject {
             .sink { [weak self] order in
                 guard let self else { return }
                 self.askOrderBook = order.orderbookUnits
-                    .map { .init(price: $0.askPrice, size: $0.askSize) }
+                    .map { OrderbookItem(price: $0.askPrice, size: $0.askSize)}
                     .sorted { $0.price > $1.price }
                 self.bidOrderBook = order.orderbookUnits
-                    .map { .init(price: $0.bidPrice, size: $0.bidSize) }
+                    .map { OrderbookItem(price: $0.bidPrice, size: $0.bidSize)}
                     .sorted { $0.price > $1.price }
             }
             .store(in: &cancelable)

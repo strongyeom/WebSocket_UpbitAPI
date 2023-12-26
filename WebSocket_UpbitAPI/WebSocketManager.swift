@@ -90,7 +90,7 @@ final class WebSocketManager: NSObject {
                             self?.orderBookSbj.send(decodedData)
                         }
                         
-                    case.string(let string): print(string)
+                    case .string(let string): print(string)
                         
                     @unknown default: print("unknown Error")
                     }
