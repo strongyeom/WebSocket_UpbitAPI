@@ -11,6 +11,10 @@
 		2699119F2B3A614D00436805 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2699119E2B3A614D00436805 /* ContentView.swift */; };
 		269911A12B3A614F00436805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269911A02B3A614F00436805 /* Assets.xcassets */; };
 		269911A42B3A614F00436805 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269911A32B3A614F00436805 /* Preview Assets.xcassets */; };
+		269911AB2B3A627D00436805 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269911AA2B3A627D00436805 /* WebSocketManager.swift */; };
+		269911AD2B3A6AFB00436805 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269911AC2B3A6AFB00436805 /* SocketViewModel.swift */; };
+		269911AF2B3A6BE200436805 /* SocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269911AE2B3A6BE200436805 /* SocketView.swift */; };
+		269911B12B3A7CFB00436805 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269911B02B3A7CFB00436805 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		2699119E2B3A614D00436805 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		269911A02B3A614F00436805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		269911A32B3A614F00436805 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		269911AA2B3A627D00436805 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		269911AC2B3A6AFB00436805 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
+		269911AE2B3A6BE200436805 /* SocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketView.swift; sourceTree = "<group>"; };
+		269911B02B3A7CFB00436805 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				2699119C2B3A614D00436805 /* WebSocket_UpbitAPIApp.swift */,
 				2699119E2B3A614D00436805 /* ContentView.swift */,
+				269911AE2B3A6BE200436805 /* SocketView.swift */,
+				269911AC2B3A6AFB00436805 /* SocketViewModel.swift */,
+				269911AA2B3A627D00436805 /* WebSocketManager.swift */,
+				269911B02B3A7CFB00436805 /* Model.swift */,
 				269911A02B3A614F00436805 /* Assets.xcassets */,
 				269911A22B3A614F00436805 /* Preview Content */,
 			);
@@ -138,7 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2699119F2B3A614D00436805 /* ContentView.swift in Sources */,
+				269911AF2B3A6BE200436805 /* SocketView.swift in Sources */,
+				269911AD2B3A6AFB00436805 /* SocketViewModel.swift in Sources */,
+				269911B12B3A7CFB00436805 /* Model.swift in Sources */,
 				2699119D2B3A614D00436805 /* WebSocket_UpbitAPIApp.swift in Sources */,
+				269911AB2B3A627D00436805 /* WebSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
