@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 let age = Int.random(in: 1...100)
 var status = false
 class SwiftViewController: UIViewController {
@@ -23,6 +25,8 @@ class SwiftViewController: UIViewController {
 //                            default: return "알 수 없어요"
 //                            }
     
+    let baseView = SeSACFactory.make(.label)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,14 +38,20 @@ class SwiftViewController: UIViewController {
         
     }
     
+    // Optional Generic도 사용 가능
     func example<T, K>(a: T, b: K) -> String {
         return "\(a), \(b)"
     }
     
-    // each:  T를 쓰긴 할건데 갯수에 대한 제한을 없애줌
+    // each:  T를 쓰긴 할건데 갯수에 대한 제한을 없애줌 <- Parameter Pack 이라고함
 //    func exampleGeneric<each T>(a: repeat (each T)) =? (repeat each T) {
 //        return (repeat each a)
 //    }
+    
+    /*
+     @backDeployed(before: iOS 16.4) : 해당 버전 이하 까지만 쓸거에요 상한선을 정해줌
+     */
+    
     
     func randomAge() -> String {
         
@@ -63,8 +73,72 @@ class SwiftViewController: UIViewController {
             return "노인입니다"
         }
     }
-    
+}
 
+enum SeSACComponent {
+    case label
+    case button
+}
+
+protocol SeSACUIComponent {
+    var componet: SeSACComponent { get }
+    var color: UIColor { get set }
+    var bgColor: UIColor { get set }
+}
+
+final class NewLabel: UILabel, SeSACUIComponent {
     
+    var componet: SeSACComponent = .label
+    
+    var color: UIColor
+    
+    var bgColor: UIColor
+    
+    init(color: UIColor, bgColor: UIColor) {
+        self.color = color
+        self.bgColor = bgColor
+        
+        super.init(frame: .zero)
+        self.textColor = color
+        self.backgroundColor = bgColor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+struct SeSACFactory {
+    
+    static func make(_ component: SeSACComponent) -> SeSACUIComponent {
+        switch component {
+        case .label:
+            return NewLabel(color: .blue, bgColor: .black)
+        default:
+            return NewLabel(color: .blue, bgColor: .black)
+        }
+    }
+}
+
+
+final class SeSACLabel: UILabel {
+    
+    init(textColor: UIColor, bgColor: UIColor) {
+        super.init(frame: .zero)
+        self.textColor = textColor
+        self.backgroundColor = bgColor
+    }
+    
+    init(fontSize: CGFloat, bgColor: UIColor) {
+        super.init(frame: .zero)
+        self.font = .systemFont(ofSize: fontSize)
+        self.textColor = .black
+        self.numberOfLines = 0
+        self.backgroundColor = bgColor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }
