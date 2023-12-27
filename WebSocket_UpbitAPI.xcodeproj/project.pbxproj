@@ -67,9 +67,9 @@
 				269911AC2B3A6AFB00436805 /* SocketViewModel.swift */,
 				269911AA2B3A627D00436805 /* WebSocketManager.swift */,
 				269911B02B3A7CFB00436805 /* Model.swift */,
+				26D7EC5E2B3BB9610071E604 /* SwiftViewController.swift */,
 				269911A02B3A614F00436805 /* Assets.xcassets */,
 				269911A22B3A614F00436805 /* Preview Content */,
-				26D7EC5E2B3BB9610071E604 /* SwiftViewController.swift */,
 			);
 			path = WebSocket_UpbitAPI;
 			sourceTree = "<group>";

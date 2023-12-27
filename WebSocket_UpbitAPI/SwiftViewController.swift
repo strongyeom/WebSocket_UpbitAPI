@@ -25,7 +25,23 @@ class SwiftViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        exampleGeneric(a: 3, 4)
+//        let result = exampleGeneric(a: 3, 4, 5, 6, 7)
+//        result.4
+//
+//        exampleGeneric(a: 3, 4, 5, 6, 7, 4, ,5, 12)
+        
     }
+    
+    func example<T, K>(a: T, b: K) -> String {
+        return "\(a), \(b)"
+    }
+    
+    // each:  T를 쓰긴 할건데 갯수에 대한 제한을 없애줌
+//    func exampleGeneric<each T>(a: repeat (each T)) =? (repeat each T) {
+//        return (repeat each a)
+//    }
     
     func randomAge() -> String {
         
@@ -47,6 +63,8 @@ class SwiftViewController: UIViewController {
             return "노인입니다"
         }
     }
+    
+
     
     
 }
