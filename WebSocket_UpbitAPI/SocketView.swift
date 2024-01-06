@@ -13,11 +13,25 @@ struct SocketView: View {
     
 
     var body: some View {
-        VStack {
-            ForEach(viewModel.askOrderBook, id: \.id) { item in
-                Text("\(item.price)")
-            }
+        ScrollView {
+           
+                ForEach(viewModel.askOrderBook, id: \.id) { item in
+                    LazyVStack(alignment: .leading) {
+                        Text("매도 잔량 : \(item.size)")
+                        convert(item.price)
+                    }
+                    .padding()
+                   
+                }
+            
         }
+     
+    }
+    
+    
+    func convert(_ number: Double) -> some View {
+        var convertDoubleToString = number.formatted(.number)
+        return Text("매도 호가 : \(convertDoubleToString)원")
     }
 }
 
