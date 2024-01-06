@@ -72,7 +72,7 @@ final class WebSocketManager: NSObject {
             }
         })
     }
-    
+    // 연결이 되면 어떤 데이터를 받을것인지 설정
     func receive() {
         
         if isOpen {
